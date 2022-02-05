@@ -13,6 +13,9 @@ class Post(models.Model):
         # return 'Custom Post object ({})'.format(self.id)
         return self.message
     
+    class Meta:
+        ordering = ['-id']
+    
     # def message_length(self):
     #     return len(self.message)
     # message_length.short_description = '메세지 글자수' # 추가 컬럼 이름 변경
