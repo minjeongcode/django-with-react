@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 
-# shell에서 User
+# shell에서 User 불러오기
 # from django.contrib.auth import get_user_model
 # User = get_user_model()
 # User.objects.all()
