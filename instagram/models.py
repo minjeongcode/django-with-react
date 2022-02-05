@@ -1,6 +1,10 @@
+from django.conf import settings
 from django.db import models
+# from django.contrib.auth.models import User
+# ->auth.User로 불러옴
 
 class Post(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     message = models.TextField()
     photo = models.ImageField(blank=True, upload_to='instagram/post/%Y%m%d')
     is_public = models.BooleanField(default=False, verbose_name='공개여부')
@@ -21,3 +25,9 @@ class Post(models.Model):
     # message_length.short_description = '메세지 글자수' # 추가 컬럼 이름 변경
     # @property 라는 데코레이터로도 동일하게 활용 가능
     # admin에도 구현 가능
+    
+class Comment(models.Model):
+    post = models.ForeignKey('Post', on_delete=models.CASCADE, limit_choices_to={'is_public': True})
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

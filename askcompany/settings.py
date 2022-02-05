@@ -138,3 +138,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # debug_toolbar
 INTERNAL_IPS = ['127.0.0.1']
+
+# auth_user
+AUTH_USER_MODEL = 'auth.User'
