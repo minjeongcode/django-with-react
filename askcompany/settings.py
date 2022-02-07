@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third apps
+    'bootstrap5',
     'django_extensions',
     'debug_toolbar',
     # locals apps
