@@ -1,3 +1,5 @@
 # instagram templates
 instagram/templates/instagram/post_list.html
 instagram/templates/instagram/post_detail.html
+instagram/templates/instagram/post_archive.html
+instagram/templates/instagram/post_archive_year.html
