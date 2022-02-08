@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.urls import reverse
 # from django.contrib.auth.models import User
 # ->auth.User로 불러옴
 
@@ -17,6 +18,10 @@ class Post(models.Model):
         # return f'Custom Post object ({self.id})'
         # return 'Custom Post object ({})'.format(self.id)
         return self.message
+    
+    def get_absolute_url(self):
+        return reverse('instagram:post_detail', args=[self.pk])
+    
     
     class Meta:
         ordering = ['-id']
